@@ -10,14 +10,6 @@ import java.util.Scanner;
 public class AvalonCityApp {
     public static void main(String[] args) {
 
-        String companiesJsonFileIn = "files/in/companies.json"; //companies
-        String developersJsonFileIn = "files/in/developers.json"; // developers
-        String projectsJsonFileIn = "files/in/projects.json"; // projects
-        String customersJsonFileIn = "files/in/customers.json"; // customers
-        String skillsJsonFileIn = "files/in/skills.json"; // skills
-        String compCustomerKeysJsonFileIn = "files/in/company_customer_keys.json"; // company_customer
-        String devProjectKeysJsonFileIn = "files/in/developer_project_keys.json"; // developer_project
-        String devSkillKeysJsonFileIn = "files/in/developer_skill_keys.json"; // developer_skill
 
         //input URL, USER and PASSWORD from your DataBase
         String connectionUrl = "jdbc:mysql://localhost:3306/";

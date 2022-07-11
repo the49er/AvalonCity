@@ -13,7 +13,7 @@ public enum CustomerTitle {
         this.title = title;
     }
 
-    public String getTitle() {
+    public String getTitleValue() {
         return title;
     }
 
@@ -31,7 +31,7 @@ public enum CustomerTitle {
         StringBuilder sb = new StringBuilder();
 
         for (CustomerTitle ct : CustomerTitle.values()) {
-            sb.append(ct.getTitle());
+            sb.append(ct.getTitleValue());
             sb.append(", ");
         }
         return sb.substring(0, sb.length() - 2);

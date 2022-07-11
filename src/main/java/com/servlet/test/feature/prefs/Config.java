@@ -14,7 +14,8 @@ public class Config {
     public static final String DB_JDBC_CONNECTION_URL = "dbUrl";
     public static final String DB_JDBC_USER_1 = "dbUserTest";
     public static final String DB_JDBC_USER_PASSWORD_1 = "dbUserTest_pass";
-    public static final String DEFAULT_PREFS_FILENAME = "src/main/resources/json/prefs.json";
+    public static final String DB_DRIVER = "db_driver";
+    public static final String DEFAULT_PREFS_FILENAME = "C:/Java_GoIt/JavaDev/SERVLETS/testServ/src/main/resources/json/prefs.json";
     private Map<String, Object> prefs = new HashMap<>();
 
     public Config() {

@@ -10,6 +10,7 @@ import java.sql.Statement;
 public class Storage {
     private static final Storage INSTANCE = new Storage();
     private Connection connection;
+    private String dbDriver;
 
     private Storage() {
         try {
@@ -17,15 +18,19 @@ public class Storage {
             String connectionUrl = config.getString(Config.DB_JDBC_CONNECTION_URL);
             String connectionUser = config.getString(Config.DB_JDBC_USER_1);
             String connectionUserPassword = config.getString(Config.DB_JDBC_USER_PASSWORD_1);
-
+            dbDriver = config.getString(Config.DB_DRIVER);
+            Class.forName(dbDriver);
             connection = DriverManager.getConnection(connectionUrl,
                     connectionUser, connectionUserPassword);
-        }
-        catch (Exception exception){
+            if (connection != null) {
+                System.out.println("Successfully connected to MySQL database test");
+            }
+        } catch (SQLException | ClassNotFoundException exception) {
+            System.out.println("An error occurred while connecting MySQL database");
             exception.printStackTrace();
         }
-
     }
+
 
     public static Storage getInstance(){
         return INSTANCE;

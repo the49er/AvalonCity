@@ -17,8 +17,13 @@ repositories {
 }
 
 dependencies {
+
+
+
+
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+
 
     // https://mvnrepository.com/artifact/org.flywaydb/flyway-mysql
     implementation group: 'org.flywaydb', name: 'flyway-mysql', version: '8.5.13'
@@ -31,8 +36,10 @@ dependencies {
     // https://mvnrepository.com/artifact/com.h2database/h2
     implementation 'com.h2database:h2:2.1.212'
 
-    // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
-    implementation 'org.flywaydb:flyway-core:8.5.12'
+    // https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jdbc
+    implementation group: 'org.apache.tomcat', name: 'tomcat-jdbc', version: '9.0.37'
+
+
 
     // https://mvnrepository.com/artifact/org.projectlombok/lombok
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
@@ -57,3 +64,5 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+
