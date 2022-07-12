@@ -1,4 +1,4 @@
-package com.aeroparker.test.db.entity_relation;
+package com.aeroparker.db.entity_relation;
 
 
 import lombok.AllArgsConstructor;

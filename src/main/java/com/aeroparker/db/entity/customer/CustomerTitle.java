@@ -1,12 +1,13 @@
-package com.aeroparker.test.db.entity.customer;
+package com.aeroparker.db.entity.customer;
 
-import com.aeroparker.test.exception.NoSuchTitleException;
+import com.aeroparker.exception.NoSuchTitleException;
 
 public enum CustomerTitle {
     MR("Mr"),
     MRS("Mrs"),
     MS("Ms"),
-    MISS("Miss");
+    MISS("Miss"),
+    OTHER("Other");
     String title;
 
     CustomerTitle(String title){

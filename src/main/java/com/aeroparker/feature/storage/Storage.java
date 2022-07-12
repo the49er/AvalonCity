@@ -1,11 +1,15 @@
-package com.aeroparker.test.feature.storage;
+package com.aeroparker.feature.storage;
 
-import com.aeroparker.test.feature.prefs.Config;
+import com.aeroparker.feature.prefs.Config;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Properties;
 
 public class Storage {
     private static final Storage INSTANCE = new Storage();
@@ -13,19 +17,21 @@ public class Storage {
     private String dbDriver;
 
     private Storage() {
-        try {
-            Config config = new Config();
-            String connectionUrl = config.getString(Config.DB_JDBC_CONNECTION_URL);
-            String connectionUser = config.getString(Config.DB_JDBC_USER_1);
-            String connectionUserPassword = config.getString(Config.DB_JDBC_USER_PASSWORD_1);
-            dbDriver = config.getString(Config.DB_DRIVER);
+        try (InputStream input = new FileInputStream("src/main/resources/db.properties")){
+            Properties properties = new Properties();
+            properties.load(input);
+
+            String connectionUrl = properties.getProperty("dbUrl");
+            String connectionUser = properties.getProperty("dbUserTest");
+            String connectionUserPassword = properties.getProperty("dbUserTest_pass");
+            dbDriver = properties.getProperty("dbDriver");
             Class.forName(dbDriver);
             connection = DriverManager.getConnection(connectionUrl,
                     connectionUser, connectionUserPassword);
             if (connection != null) {
                 System.out.println("Successfully connected to MySQL database test");
             }
-        } catch (SQLException | ClassNotFoundException exception) {
+        } catch (SQLException | ClassNotFoundException | IOException exception) {
             System.out.println("An error occurred while connecting MySQL database");
             exception.printStackTrace();
         }

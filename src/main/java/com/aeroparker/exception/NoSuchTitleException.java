@@ -1,6 +1,6 @@
-package com.aeroparker.test.exception;
+package com.aeroparker.exception;
 
-import com.aeroparker.test.db.entity.customer.CustomerTitle;
+import com.aeroparker.db.entity.customer.CustomerTitle;
 
 public class NoSuchTitleException extends RuntimeException {
     public NoSuchTitleException(String str) {

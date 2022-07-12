@@ -1,7 +1,7 @@
 
-package com.aeroparker.test.db.dao;
-        import com.aeroparker.test.db.entity_relation.CustomerSiteKey;
-        import com.aeroparker.test.exception.NoSuchTitleException;
+package com.aeroparker.db.dao;
+        import com.aeroparker.db.entity_relation.CustomerSiteKey;
+        import com.aeroparker.exception.NoSuchTitleException;
 
         import java.sql.Connection;
         import java.sql.PreparedStatement;

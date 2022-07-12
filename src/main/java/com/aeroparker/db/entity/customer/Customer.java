@@ -1,4 +1,4 @@
-package com.aeroparker.test.db.entity.customer;
+package com.aeroparker.db.entity.customer;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

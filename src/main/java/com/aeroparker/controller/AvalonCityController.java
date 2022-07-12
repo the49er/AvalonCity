@@ -1,13 +1,13 @@
-package com.aeroparker.test.controller;
+package com.aeroparker.controller;
 
-import com.aeroparker.test.db.entity.site.Site;
-import com.aeroparker.test.db.dao.CustomerSiteDAO;
-import com.aeroparker.test.db.dao.SiteDAO;
-import com.aeroparker.test.db.entity.customer.Customer;
-import com.aeroparker.test.db.entity.customer.CustomerTitle;
-import com.aeroparker.test.db.dao.CustomerDAO;
-import com.aeroparker.test.db.entity_relation.CustomerSiteKey;
-import com.aeroparker.test.feature.storage.Storage;
+import com.aeroparker.db.entity.site.Site;
+import com.aeroparker.db.dao.CustomerSiteDAO;
+import com.aeroparker.db.dao.SiteDAO;
+import com.aeroparker.db.entity.customer.Customer;
+import com.aeroparker.db.entity.customer.CustomerTitle;
+import com.aeroparker.db.dao.CustomerDAO;
+import com.aeroparker.db.entity_relation.CustomerSiteKey;
+import com.aeroparker.feature.storage.Storage;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -79,9 +79,11 @@ public class AvalonCityController extends HttpServlet {
         customerSiteKey.setSiteId(siteDAO.getMaxId());
         customerSiteDAO.insertNewEntity(customerSiteKey);
 
-        resp.getWriter().print(result);
-        resp.getWriter().close();
+//        resp.getWriter().print(result);
+//        resp.getWriter().close();
 
+        resp.setContentType("text/html");
+        resp.sendRedirect("localhost:8080/registration");
         super.doPost(req, resp);
     }
 

@@ -1,8 +1,6 @@
-package com.aeroparker.test;
-
-import com.aeroparker.test.feature.storage.StorageTemp;
-import com.aeroparker.test.feature.storage.DataBaseInitService;
-import com.aeroparker.test.feature.storage.Storage;
+import com.aeroparker.feature.storage.StorageTemp;
+import com.aeroparker.feature.storage.DataBaseInitService;
+import com.aeroparker.feature.storage.Storage;
 
 import java.sql.Connection;
 import java.util.Scanner;
